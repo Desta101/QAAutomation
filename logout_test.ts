@@ -1,6 +1,6 @@
 Feature('Logout');
 
-import {email, loginAndNavigateToContactList, logout, navigateToSignUpPage, password} from './commonSetup';
+import {loginAndNavigateToContactList, logout} from './commonSetup';
 
 Scenario('Logout from the system', async ({ I }) => {
     loginAndNavigateToContactList(I);
