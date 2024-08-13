@@ -1,7 +1,5 @@
 
-// Utility function to log in
-// Generate a random number
-const randomNumber = Math.floor(Math.random() * 10000); // Adjust the multiplier to increase the range if needed
+const randomNumber = Math.floor(Math.random() * 10000); 
 export const email = `user${randomNumber}@gmail›.com`;
 export const password = '12345678';
 
@@ -19,7 +17,7 @@ export const login = (I: CodeceptJS.I, email: string, password: string) => {
     I.seeElement('#add-contact');
 };
 
-// Utility function to add a contact
+
 export const addContact = (I: CodeceptJS.I, contact: { firstName: string, lastName: string, birthdate: string, email: string, phone: string, street: string, city: string, state: string, postalCode: string, country: string }) => {
     I.click('#add-contact');
     I.fillField('#firstName', contact.firstName);
@@ -36,18 +34,18 @@ export const addContact = (I: CodeceptJS.I, contact: { firstName: string, lastNa
     I.see(`${contact.firstName} ${contact.lastName}`, '.contactTable');
 };
 
-// Function to navigate and verify elements on the login page
+
 export const navigateToLoginPage = (I: CodeceptJS.I) => {
     I.amOnPage('https://thinking-tester-contact-list.herokuapp.com/login');
-    I.waitForElement('#email', 5);      // Wait up to 5 seconds for the email input to appear
-    I.waitForElement('#password', 5);   // Wait for the password input
-    I.waitForElement('#submit', 5);     // Wait for the submit button
+    I.waitForElement('#email', 5);      
+    I.waitForElement('#password', 5);  
+    I.waitForElement('#submit', 5);     
     I.see('Contact List App', 'h1');
     I.seeInCurrentUrl('/login');
 };
 
 
-// Function to log in and navigate to the contact list
+
 export const loginAndNavigateToContactList = (I: CodeceptJS.I) => {
     navigateToLoginPage(I);
     I.fillField('#email', email);
@@ -58,16 +56,16 @@ export const loginAndNavigateToContactList = (I: CodeceptJS.I) => {
     I.seeElement('#add-contact');
 };
 
-// Function to navigate and verify elements on the registration page
+
 export const navigateToSignUpPage = (I: CodeceptJS.I) => {
     navigateToLoginPage(I);
     I.click('Sign up');
     I.seeInCurrentUrl('/addUser');
 };
 
-// Function to log out and verify logout success
+
 export const logout = async (I: CodeceptJS.I) => {
-    I.waitForElement('#logout', 5);  // Wait for the logout button to appear
+    I.waitForElement('#logout', 5);  
     I.click('#logout');
     const currentUrl = await I.grabCurrentUrl();
     console.log('Current URL after logout:', currentUrl);
