@@ -9,10 +9,9 @@ Scenario('Verify successful user registration', ({ I }) => {
     I.fillField('#firstName', 'John');
     I.fillField('#lastName', 'Doe');
     I.fillField('#email', email);
-    I.fillField('#password', password); // Use variable
+    I.fillField('#password', password); 
     I.click('#submit');
-    I.seeInCurrentUrl('/contactList');  // Check for redirection to contact list page after registration
-});
+    I.seeInCurrentUrl('/contactList');  
 
 Scenario('Add multiple contacts', ({ I }) => {
     loginAndNavigateToContactList(I);
