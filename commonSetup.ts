@@ -1,5 +1,5 @@
 
-const randomNumber = Math.floor(Math.random() * 10000); 
+const randomNumber = Math.floor(Math.random() * 10000);
 export const email = `user${randomNumber}@gmail›.com`;
 export const password = '12345678';
 
@@ -16,7 +16,6 @@ export const login = (I: CodeceptJS.I, email: string, password: string) => {
     I.see('Contact List', 'h1');
     I.seeElement('#add-contact');
 };
-
 
 export const addContact = (I: CodeceptJS.I, contact: { firstName: string, lastName: string, birthdate: string, email: string, phone: string, street: string, city: string, state: string, postalCode: string, country: string }) => {
     I.click('#add-contact');
@@ -37,9 +36,9 @@ export const addContact = (I: CodeceptJS.I, contact: { firstName: string, lastNa
 
 export const navigateToLoginPage = (I: CodeceptJS.I) => {
     I.amOnPage('https://thinking-tester-contact-list.herokuapp.com/login');
-    I.waitForElement('#email', 5);      
-    I.waitForElement('#password', 5);  
-    I.waitForElement('#submit', 5);     
+    I.waitForElement('#email', 5);
+    I.waitForElement('#password', 5);
+    I.waitForElement('#submit', 5);
     I.see('Contact List App', 'h1');
     I.seeInCurrentUrl('/login');
 };
@@ -65,7 +64,7 @@ export const navigateToSignUpPage = (I: CodeceptJS.I) => {
 
 
 export const logout = async (I: CodeceptJS.I) => {
-    I.waitForElement('#logout', 5);  
+    I.waitForElement('#logout', 5);
     I.click('#logout');
     const currentUrl = await I.grabCurrentUrl();
     console.log('Current URL after logout:', currentUrl);
