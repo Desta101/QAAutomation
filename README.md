@@ -12,11 +12,8 @@ This project is designed to test the functionality of the website [Thinking Test
 ## Table of Contents
 
 - [Installation](#installation)
-- [Project Structure](#project-structure)
-- [Running Tests](#running-tests)
-- [Test Details](#test-details)
-- [Contributing](#contributing)
-- [License](#license)
+- [Test Details](#Test-Details)
+
 
 ## Installation
 
