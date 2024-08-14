@@ -34,7 +34,7 @@ To set up the project locally, follow these steps:
 This command will execute all the tests in the project and provide detailed output for each step.
 
 
-**Test Details**
+##Test Details
 1. **User Registration (userRegistration_test.ts)**
   This script tests the user registration process. It ensures that:
   A user can successfully register.
