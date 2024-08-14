@@ -1,6 +1,6 @@
 Feature('User Login');
 
-import { navigateToLoginPage } from './commonSetup';
+import { email,navigateToLoginPage } from './commonSetup';
 
 Scenario('Navigate to the login page and verify elements', ({ I }) => {
     navigateToLoginPage(I);
@@ -10,7 +10,7 @@ Scenario('Navigate to the login page and verify elements', ({ I }) => {
 Scenario('Login with valid credentials', ({ I }) => {
     navigateToLoginPage(I);
     I.waitForElement('#email', 5);
-    I.fillField('#email', 'ShimonDesta2@gmail.com'); 
+    I.fillField('#email', email); 
     I.fillField('#password', '12345678'); 
     I.click('#submit');
     I.seeInCurrentUrl('/contactList'); 
@@ -19,7 +19,7 @@ Scenario('Login with valid credentials', ({ I }) => {
 Scenario('Prevent login with invalid credentials', ({ I }) => {
     navigateToLoginPage(I);
     I.waitForElement('#email', 5);
-    I.fillField('#email', 'ShimonDesta2@gmail.com');
+    I.fillField('#email', email);
     I.fillField('#password', 'wrongPassword');
     I.click('#submit');
     I.waitForElement('#error', 5); 
